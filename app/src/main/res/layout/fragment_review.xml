@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Değerlendirme Yap"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Gerçek bir müşteri olduğunuzu doğrulamak için lütfen konumunuzu paylaşın veya fiş üzerindeki QR kodu okutun."
+            android:textColor="#555" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnVerifyLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Konum Doğrula" />
+             
+             <Space 
+                android:layout_width="8dp"
+                android:layout_height="wrap_content"/>
+
+             <Button
+                android:id="@+id/btnScanQR"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="QR Tara" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvVerificationStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="8dp"
+            android:background="#FFEBEE"
+            android:text="Durum: Doğrulanmadı"
+            android:textColor="#D32F2F"
+            android:textAlignment="center"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/layoutRatingForm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="vertical"
+            android:visibility="visible"> 
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hijyen Puanı (1-5)"
+                android:textStyle="bold" />
+            <RatingBar
+                android:id="@+id/rbHygiene"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:stepSize="1.0" 
+                android:numStars="5"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Lezzet Puanı (1-5)"
+                android:textStyle="bold" />
+            <RatingBar
+                android:id="@+id/rbTaste"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:stepSize="1.0" 
+                android:numStars="5"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Fiyat Puanı (1-5)"
+                android:textStyle="bold" />
+            <RatingBar
+                android:id="@+id/rbPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:stepSize="1.0" 
+                android:numStars="5"/>
+
+            <EditText
+                android:id="@+id/etComment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Yorumunuz (Opsiyonel)"
+                android:minHeight="100dp"
+                android:gravity="top" />
+
+            <!-- YENİ: Anonim Seçeneği -->
+            <CheckBox
+                android:id="@+id/cbAnonymous"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="İsmim görünmesin (Anonim)"
+                android:layout_marginTop="8dp"/>
+
+            <Button
+                android:id="@+id/btnSubmitReview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Gönder" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

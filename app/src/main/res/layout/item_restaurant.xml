@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Restoran Resmi -->
+        <ImageView
+            android:id="@+id/ivRestaurantImage"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Ana Puan (RW Puanı) - Sağ Üstte -->
+        <TextView
+            android:id="@+id/tvRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:background="@drawable/bg_rating"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"
+            android:text="4.5"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Restoran Adı ve Harita İkonu Satırı -->
+        <LinearLayout
+            android:id="@+id/layoutHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="12dp"
+            android:paddingTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/ivRestaurantImage">
+
+            <TextView
+                android:id="@+id/tvRestaurantName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Restoran Adı"
+                android:textColor="#212121"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Harita İkonu (Buraya Taşındı) -->
+            <ImageView
+                android:id="@+id/ivMap"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@android:drawable/ic_dialog_map"
+                app:tint="#D32F2F"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="2dp" />
+        </LinearLayout>
+
+        <!-- Şehir Bilgisi -->
+        <LinearLayout
+            android:id="@+id/layoutLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="12dp"
+            android:paddingTop="4dp"
+            app:layout_constraintTop_toBottomOf="@id/layoutHeader">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_gravity="center_vertical"
+                android:src="@android:drawable/ic_menu_mylocation"
+                app:tint="#757575" />
+
+            <TextView
+                android:id="@+id/tvRestaurantCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="İstanbul"
+                android:textColor="#757575"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Detaylı Puanlar (Tam İsimleriyle) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:weightSum="3"
+            app:layout_constraintTop_toBottomOf="@id/layoutLocation">
+
+            <!-- Hijyen (Yeşil) -->
+            <TextView
+                android:id="@+id/tvHygieneScore"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_chip_green"
+                android:text="Hijyen: 4.8"
+                android:textAlignment="center"
+                android:padding="6dp"
+                android:layout_marginEnd="4dp"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#2E7D32" />
+
+            <!-- Lezzet (Turuncu) -->
+            <TextView
+                android:id="@+id/tvTasteScore"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_chip_orange"
+                android:text="Lezzet: 5.0"
+                android:textAlignment="center"
+                android:padding="6dp"
+                android:layout_marginHorizontal="4dp"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#EF6C00" />
+
+            <!-- Fiyat (Mavi) -->
+            <TextView
+                android:id="@+id/tvPriceScore"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_chip_blue"
+                android:text="Fiyat: 3.5"
+                android:textAlignment="center"
+                android:padding="6dp"
+                android:layout_marginStart="4dp"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#1565C0" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
