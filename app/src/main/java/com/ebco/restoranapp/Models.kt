@@ -41,6 +41,7 @@ data class User(
 )
 
 data class CustomerRequest(
+    val userId: String = "",
     val id: String = "",
     val restaurantId: String = "",
     val tableName: String = "",
