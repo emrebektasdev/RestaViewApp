@@ -1,0 +1,4 @@
+# Exact historical false-positive fingerprints for Firebase client configuration.
+# Firebase API keys are public identifiers restricted to Firebase APIs.
+# No future commit, file or value is broadly excluded.
+db8687d9e1cda562cb45bcb772f435799beb0df4:app/google-services.json:gcp-api-key:31
